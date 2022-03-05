@@ -1,0 +1,73 @@
+---
+title: "Web Scraping API USD a PEN - Bloomberg"
+description: |
+  Escrapeamos APIs de Bloomber para ver cambio de monedas de Dólares a Soles
+author:
+  - name: Keith Caballero
+    url: https://keithstatsblog.netlify.app/
+date: 2022-03-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+```
+
+# Scrapeo de APIs de Bloomberg
+
+## Importamos Librerias
+
+```{r}
+pacman::p_load(
+  rvest,httr,jsonlite,tidyverse,lubridate,plotly
+)
+```
+
+## Creamos función ya que read_json nos genero errores de lectura
+```{r}
+read_url <- function(url){
+  GET(url,
+      config = add_headers(.headers = c(
+        "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+      ))
+  ) %>% content()
+  
+}
+```
+
+## APIs scrapeados
+
+```{r}
+api <- "https://www.bloomberg.com/markets2/api/history/USDPEN%3ACUR/PX_LAST?"
+api_semanal <- paste0(api,"timeframe=5_YEAR&period=weekly&volumePeriod=weekly")
+api_diario <- paste0(api,"timeframe=5_YEAR&period=daily&volumePeriod=daily")
+```
+
+## Generamos los gráficos
+
+
+### USD A PEN Semanalmente
+
+```{r}
+(read_url(api_semanal) %>% 
+  map_df("price") %>% 
+  transmute(`DOL a PEN`=value,Fechas = ymd(dateTime)) %>% 
+  ggplot(aes(Fechas,`DOL a PEN`)) +
+  geom_line(size=0.6,alpha=0.7))
+```
+
+### USD A PEN Diario
+
+```{r}
+(read_url(api_diario) %>% 
+    map_df("price") %>% 
+    transmute(`DOL a PEN`=value,Fechas = ymd(dateTime)) %>% 
+    ggplot(aes(Fechas,`DOL a PEN`)) +
+    geom_line(size=0.6,alpha=0.7)) 
+
+```
+
+
