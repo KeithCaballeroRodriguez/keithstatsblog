@@ -21,4 +21,4 @@ collections:
     share: [twitter, linkedin]
     subscribe: _buymeacoffee.html
 output: distill::distill_article
-preview: https://raw.githubusercontent.com/KeithCaballeroRodriguez/mads/master/logito.svg
+preview: images/logito.png
