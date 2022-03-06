@@ -15,7 +15,9 @@
     ],
     "contents": "\r\nScrapeo de APIs de Bloomberg\r\nImportamos Librerias\r\n\r\n\r\nShow code\r\n\r\npacman::p_load(\r\n  rvest,httr,jsonlite,tidyverse,lubridate,plotly\r\n)\r\n\r\n\r\n\r\nCreamos función ya que read_json nos genero errores de lectura\r\n\r\n\r\nShow code\r\n\r\nread_url <- function(url){\r\n  GET(url,\r\n      config = add_headers(.headers = c(\r\n        \"User-Agent\" = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36\"\r\n      ))\r\n  ) %>% content()\r\n  \r\n}\r\n\r\n\r\n\r\nAPIs scrapeados\r\n\r\n\r\nShow code\r\n\r\napi <- \"https://www.bloomberg.com/markets2/api/history/USDPEN%3ACUR/PX_LAST?\"\r\napi_semanal <- paste0(api,\"timeframe=5_YEAR&period=weekly&volumePeriod=weekly\")\r\napi_diario <- paste0(api,\"timeframe=5_YEAR&period=daily&volumePeriod=daily\")\r\n\r\n\r\n\r\nGeneramos los gráficos\r\nUSD A PEN Semanalmente\r\n\r\n\r\nShow code\r\n\r\n(read_url(api_semanal) %>% \r\n  map_df(\"price\") %>% \r\n  transmute(`DOL a PEN`=value,Fechas = ymd(dateTime)) %>% \r\n  ggplot(aes(Fechas,`DOL a PEN`)) +\r\n  geom_line(size=0.6,alpha=0.7))\r\n\r\n\r\n\r\n\r\nUSD A PEN Diario\r\n\r\n\r\nShow code\r\n\r\n(read_url(api_diario) %>% \r\n    map_df(\"price\") %>% \r\n    transmute(`DOL a PEN`=value,Fechas = ymd(dateTime)) %>% \r\n    ggplot(aes(Fechas,`DOL a PEN`)) +\r\n    geom_line(size=0.6,alpha=0.7)) \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-03-05-web-scraping-pen-bloomberg/web-scraping-pen-bloomberg_files/figure-html5/unnamed-chunk-4-1.png",
-    "last_modified": "2022-03-06T00:19:05-05:00",
-    "input_file": "web-scraping-pen-bloomberg.knit.md"
+    "last_modified": "2022-03-06T00:19:06-05:00",
+    "input_file": {},
+    "preview_width": 1248,
+    "preview_height": 768
   }
 ]

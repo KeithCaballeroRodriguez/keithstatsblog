@@ -1,13 +1,21 @@
 name: "keithstatsblog"
 title: "Keith Stats Blog"
+favicon: images/favicon.ico
+base_url: https://keithstatsblog.netlify.app/
+repository_url: https://github.com/KeithCaballeroRodriguez/keithstatsblog
 description: |
   Keith Stats Blog
 output_dir: "_site"
-favicon: images/favicon.ico
 navbar:
   right:
     - text: "Home"
       href: index.html
     - text: "About"
       href: about.html
+    - icon: fa fa-github
+      href: https://github.com/KeithCaballeroRodriguez
+collections:
+  posts:
+    share: [twitter, linkedin]
+    subscribe: _buymeacoffee.html
 output: distill::distill_article
