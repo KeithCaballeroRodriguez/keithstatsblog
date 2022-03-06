@@ -1,7 +1,7 @@
 name: "keithstatsblog"
 title: "Keith Stats Blog"
 favicon: images/favicon.ico
-base_url: https://keithstatsblog.netlify.app/
+base_url: https://raw.githubusercontent.com/KeithCaballeroRodriguez/mads/master/logito.svg
 repository_url: https://github.com/KeithCaballeroRodriguez/keithstatsblog
 description: |
   Keith Stats Blog
