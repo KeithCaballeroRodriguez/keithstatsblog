@@ -3,3 +3,19 @@ title: "Keith Stats Blog"
 site: distill::distill_website
 listing: posts
 ---
+
+```{r, include=FALSE, results='asis'}
+library(metathis)
+
+meta() %>%
+  meta_social(
+    title = "Keith Stats Blog",
+    description = "Keith jugando con R",
+    url = "https://keithstatsblog.netlify.app/",
+    image = "https://raw.githubusercontent.com/KeithCaballeroRodriguez/mads/master/logito.svg",
+    image_alt = "Keith love R",
+    og_type = "website",
+    og_author = "Keith Caballero"
+  )
+```
+
