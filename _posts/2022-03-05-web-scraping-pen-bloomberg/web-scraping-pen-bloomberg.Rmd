@@ -6,9 +6,12 @@ author:
   - name: Keith Caballero
     url: https://keithstatsblog.netlify.app/
 date: 2022-03-05
+categories:
+  - scraping
 output:
   distill::distill_article:
     self_contained: false
+    code_folding: true
 ---
 
 

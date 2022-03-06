@@ -90,6 +90,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <title>Keith Stats Blog</title>
 
 
+  <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -1860,6 +1861,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -2208,11 +2215,11 @@ function init_posts_list() {
 
 
 
-<div class="posts-container posts-apply-limit l-page">
+<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption" data-caption="Keith Stats Blog">Keith Stats Blog</h1>
 <a href="posts/2022-03-05-web-scraping-pen-bloomberg/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["scraping"]}</script>
 <div class="metadata">
 <div class="publishedDate">March 5, 2022</div>
 <div class="dt-authors">
@@ -2224,34 +2231,33 @@ function init_posts_list() {
 </div>
 <div class="description">
 <h2>Web Scraping API USD a PEN - Bloomberg</h2>
-<div class="dt-tags"></div>
-<p>A short description of the post.</p>
+<div class="dt-tags">
+<div class="dt-tag">scraping</div>
+</div>
+<p>Escrapeamos APIs de Bloomber para ver cambio de monedas de Dólares a Soles</p>
 </div>
 </a>
-<a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 5, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Nora Jones</div>
 </div>
+<div class="posts-sidebar">
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#category:articles">articles</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:scraping">scraping</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
 </div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Welcome to Keith Stats Blog</h2>
-<div class="dt-tags"></div>
-<p>Welcome to our new blog, Keith Stats Blog. We hope you enjoy 
-reading what we have to say!</p>
-</div>
-</a>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
 </div>
 </div>
-<!--/radix_placeholder_article_listing-->
+<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
 <h1>Keith Stats Blog</h1>
