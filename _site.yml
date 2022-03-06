@@ -3,7 +3,7 @@ title: "Keith Stats Blog"
 description: |
   Keith Stats Blog
 output_dir: "_site"
-favicon: _images/favicon.ico
+favicon: images/favicon.ico
 navbar:
   right:
     - text: "Home"
