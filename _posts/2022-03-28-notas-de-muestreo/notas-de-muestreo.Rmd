@@ -1,0 +1,112 @@
+---
+title: "Notas de Muestreo"
+description: |
+  A short description of the post.
+author:
+  - name: Keith Caballero
+    url: https://keithstatsblog.netlify.app/
+date: 2022-03-28
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introducción
+
+Considerando la distribución de muestreo de un estimador: $\overline{y}_c$: Valores posibles del estimador $P_c$ : Probabilidad de materialización del estimador c
+
+La media de la distribución de muestreo es el valor esperado(la esperanza matemática) del estimador:
+
+$$\displaystyle E(\overline{y})= \sum_{c}{P_c\overline{y}_c}$$
+
+$\displaystyle E(\overline{y})-\overline{Y}$ : Sesgo de muestreo
+
+Considerando si el estimador es insesgado, sucedería lo sgte para toda la distribución muestral del estimador: Si $$\displaystyle E(\overline{y})-\overline{Y}=0 \rightarrow E(\overline{y})= \overline{Y}$$
+
+Desviación Estandar (Error Estándar): La raíz cuadrada de la varianza de la distribución de muestreo del estimador, que también es la desviación cuadrática media alrededor de la media $E(\overline{y})$ :
+
+$$
+\displaystyle Var(\overline{y}) =  \sum_{c}{P_c[y_c-E(\overline{y})]^2} \quad S(\overline{y})=\sqrt{Var(\overline{y}})
+$$
+
+Error Cuadrático Medio de la distribución de muestreo se relaciona con la varianza, pero en este las desviaciones se toman alrededor del valor $\overline{Y}$
+
+$$
+\displaystyle ECM(\overline{y})=\sum_{c}{P_c(\overline{y}_c-\overline{Y})^2}=Var(\overline{y})+[E(\overline{y})-\overline{Y}]^2
+$$
+
+EL termino adicional $[E(\overline{y})-\overline{Y}]^2$ es el cuadrado del sesgo de muestreo, este se anula en los diseños de muestreo insesgados. Y si no es cero, el sesgo de muestreo es pequeño para la mayoría de las muestras bien diseñadas, y tiende a disminuir conforme aumenta el tamaño de la muestra.
+
+La inferencia estadística se base a errores estándares de la forma de intervalos:
+
+$$
+[\overline{y} \pm t_ps(\overline{y})]
+$$
+
+En el **Muestreo Probabilistico** cada elemento dela población tiene una probabilidad conocida y no nula de ser seleccionada.
+
++-----------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| I         | ***Mesip (Métodos de Selección con Igual Probabilidad)*** para todos los elementos:                                             | ***Probabilidades desiguales*** para elementos diferentes; compensadas generalmente con ponderaciones inversas.                                                             |
+|           |                                                                                                                                 |                                                                                                                                                                             |
+|           | a\) Probabilidades iguales en todas las etapas                                                                                  | a\) Causadas por irregularidades en los marcos y los procedimientos de selección                                                                                            |
+|           |                                                                                                                                 |                                                                                                                                                                             |
+|           | b\) Probabilidades totales iguales para todos los elementos, obtenidas compensando probabilidades desiguales en diversas etapas | b\) Afijación o Asignación desproporcional diseñada para una asignación óptima                                                                                              |
++-----------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| II        | ***Muestreo de elementos***: en una sola etapa, la unidad de muestreo contiene solamente un elemento                            | ***Muestreo de conglomerados***: las unidades de muestreo son conglomerados de elementos                                                                                    |
+|           |                                                                                                                                 |                                                                                                                                                                             |
+|           |                                                                                                                                 | a\) Muestreo de conglomerados en una etapa                                                                                                                                  |
+|           |                                                                                                                                 |                                                                                                                                                                             |
+|           |                                                                                                                                 | b\) Submuestreo o muestreo polietápico                                                                                                                                      |
+|           |                                                                                                                                 |                                                                                                                                                                             |
+|           |                                                                                                                                 | c\) Conglomerados iguales                                                                                                                                                   |
+|           |                                                                                                                                 |                                                                                                                                                                             |
+|           |                                                                                                                                 | d\) Conglomerados desiguales                                                                                                                                                |
++-----------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| III       | ***Selección no estratificada:*** las unidades de muestreo seleccionadas de la población completa                               | ***Muestreo estratificado***: selecciones separadas de particiones,característica o estratos de la población.                                                               |
++-----------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IV        | ***Selección aleatoria*** de unidades individuales de muestreo de estrato completo o de la población                            | ***Selección sistemática*** de unidades de muestreo con un intervalo de selección aplicado a una lista                                                                      |
++-----------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| V         | ***Muestreo en una fase o etapa (monoetápica)***: La muestra final seleccionada directamente de la población completa           | ***Muestreo de dos fases (muestreo doble) :*** la muestra final seleccionada de una muestra de primera fase, que obtiene información para estratificación o para estimación |
++-----------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Clasificación de métodos probabilisticos de selección, estas pueden combinarse
+
+# Notación
+
+![](notas-de-muestreo_insertimage_1.png "Población"){width="404"}
+
+Supongamos que nuestra Población esta dada por las siguientes unidades o elementos(personas, viviendas, areas, departamentos,etc): $U_1,\quad U_2,\quad ...,\quad U_N$ donde:
+
+## Valores de la población
+
+$N=$número de elementos en la población
+
+$Y_i =$valor de la variable y para el elemento i-ésimo de la población. Tambien se utiliza para denotar la variable $y$ como elemento general
+
+$\displaystyle Y= \sum_{i=1}^{N}Y_i =$ total de la población para la variable $y$. El subíndice i indica el número de listado del elemento de la población. El signo $\displaystyle \sum_{i=1}^{N}$ indica la suma sobre todos los elementos de la población (i=1,2,....,N).
+
+$\displaystyle \overline{Y}=\frac{Y}{N}=\frac{1}{N} \sum_{i=1}^{N}Y_i =$ media de la población por elementos de la variable $Y_i$
+
+$$\displaystyle S_y^2=\frac{1}{N-1}\sum_{i=1}^{N}{(Y_i-\overline{Y})^2} \quad \sigma_2^2=\frac{1}{N}\sum_{i=1}^{N}{(Y_i-\overline{Y})^2} \rightarrow S_y^2=\frac{N}{N-1}\sigma_y^2$$
+
+La varianza de los elementos de la población tiene dos definiciones $\sigma_y^2$ es más tradicional pero $S_y^2$ simplifica muchas fórmulas. La diferencia entre las dos desaparece para poblaciones grandes.
+
+$S_y$ o $\sigma_y =$ desviación estándar de los elementos de la población. 
+
+
+## Valores de la muestra
+
+$y_i=$ Valor de la variable $Y_i$ para el elemnto j-ésimo de la muestra.
+
+$y=\sum_{j=1}^{n}y_j =$ Total de la muestra para la variable $Y_i$
+
+$\displaystyle \overline{y}=\frac{y}{n}=\frac{1}{n} \sum_{j=1}^{n}y_i =$ Media simple de la muestra por elemento de la variable $Y_i$. El índice $j$ aplicable a la muestra varía de 1 a $n$. El signo $\sum_{j=1}^{n}$ indica la suma sobre todos los elementos de la muestra (j=1,2,...,n)
+
+En muchos diseños de muestreo mesip, pero no en todos, se usa $\overline{y}$ para estimar $\overline{Y}$. En forma semejante, $N\overline{y}$ puede usarse como estimador de  $\overline{Y}$. Nótese que $N\overline{y}=\frac{N}{n}y=\frac{y}{f}$
+
+
+$\displaystyle S_y^2=\frac{1}{n-1}\sum_{i=1}^{n}{(y_i-\overline{y})^2}=$ varianza de los elementos de la muestra. Es más fácil de calcular en la forma  $\displaystyle \frac{1}{n-1} [ \sum_{j=1}^ny_j^2-n\overline{y}^2]$. 
