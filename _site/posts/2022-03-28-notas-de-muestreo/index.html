@@ -2213,6 +2213,107 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><span class="math inline">\(\displaystyle \overline{y}=\frac{y}{n}=\frac{1}{n} \sum_{j=1}^{n}y_i =\)</span> Media simple de la muestra por elemento de la variable <span class="math inline">\(Y_i\)</span>. El índice <span class="math inline">\(j\)</span> aplicable a la muestra varía de 1 a <span class="math inline">\(n\)</span>. El signo <span class="math inline">\(\sum_{j=1}^{n}\)</span> indica la suma sobre todos los elementos de la muestra (j=1,2,…,n)</p>
 <p>En muchos diseños de muestreo mesip, pero no en todos, se usa <span class="math inline">\(\overline{y}\)</span> para estimar <span class="math inline">\(\overline{Y}\)</span>. En forma semejante, <span class="math inline">\(N\overline{y}\)</span> puede usarse como estimador de <span class="math inline">\(\overline{Y}\)</span>. Nótese que <span class="math inline">\(N\overline{y}=\frac{N}{n}y=\frac{y}{f}\)</span></p>
 <p><span class="math inline">\(\displaystyle S_y^2=\frac{1}{n-1}\sum_{i=1}^{n}{(y_i-\overline{y})^2}=\)</span> varianza de los elementos de la muestra. Es más fácil de calcular en la forma <span class="math inline">\(\displaystyle \frac{1}{n-1} [ \sum_{j=1}^ny_j^2-n\overline{y}^2]\)</span>.</p>
+<h1 id="muestreo-aleatorio-simple-mas">Muestreo Aleatorio Simple (MAS)</h1>
+<h2 id="muestreo-con-reemplazo---no-restricto-c.r">Muestreo Con Reemplazo - No Restricto (c.r)</h2>
+<p><span class="math inline">\(P(\text{Seleccionar }U_i)=\frac{1}{N}\)</span></p>
+<h2 id="muestreo-sin-reemplazo---irrestricto-s.r">Muestreo Sin Reemplazo - Irrestricto (s.r)</h2>
+<p><span class="math inline">\(P(\text{Seleccionar }U_i\text{ en el }1^{er}\text{ sorteo})=\frac{1}{N}\)</span></p>
+<p><span class="math inline">\(P(\text{Seleccionar }U_i \wedge U_j \text{ sean seleccionados})=\frac{1}{N}\frac{1}{N-1}=P(U_j)P(U_i\mid U_j)\)</span></p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Por el Teorema de la Probabilidad Total:</td>
+</tr>
+<tr class="even">
+<td>Sean los sucesos <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición del espacio muestral <span class="math inline">\(\Omega\)</span>, y sea <span class="math inline">\(B\)</span> un suceso cualquiera, se cumple que la probabilidad del suceso <span class="math inline">\(B\)</span> puede expresase en función de los sucesos <span class="math inline">\(A_i\)</span> de la sgte manera: <span class="math display">\[P(B)=P(B \mid A_1)\cdot P(A_1) + P(B \mid A_2)\cdot P(A_2) + \cdots +P(B \mid A_n)\cdot P(A_n)\]</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\)</span></p>
+<p><span class="math inline">\(=P(U_1\cap U_j\cup U_2\cap U_j \cup \ldots \cup U_N\cap U_j)\)</span></p>
+<p><span class="math inline">\(=P(U_1\cap U_j)+ P(U_2\cap U_j)+ \ldots + P(U_N\cap U_j)\)</span> <span class="math inline">\(=P( U_j)P(U_1 \mid U_j)+ P( U_j)P(U_2 \mid U_j)+ \ldots + P( U_j)P(U_N \mid U_j)\)</span></p>
+<p>donde <span class="math inline">\(\ldots \rightarrow P( U_j)P(U_j \mid U_j)\rightarrow P(U_j \mid U_j)=0\)</span></p>
+<p><span class="math inline">\(\displaystyle =\frac{1}{N}\frac{1}{N-1}+\ldots+\frac{1}{N}\frac{1}{N-1},\quad N-1 \quad veces\)</span> <span class="math inline">\(\displaystyle =\sum_{i=1}^NP(U_j)P(U_i\mid U_j)\)</span> <span class="math inline">\(\displaystyle =\sum_{i=1}^N\frac{1}{N}\frac{1}{N-1}=(N-1)\frac{1}{N}\frac{1}{N-1}=\frac{1}{N}\)</span> Por lo tanto: <span class="math inline">\(\displaystyle P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\frac{1}{N}\)</span></p>
+<p><span class="math inline">\(\displaystyle P(\text{Seleccionar }U_i\text{ en el }3^{er}\text{ sorteo})=\frac{1}{N}\)</span></p>
+<p><span class="math inline">\(\displaystyle P(\text{Selección S produsca la }U_i \mid\text{ Una selección previa ha producido la } U_j, i\neq j)= \frac{1}{N-1}\)</span></p>
+<p><span class="math inline">\(\displaystyle P(\text{Selección R y S seleccione }U_i \text{ y } U_j) = P(U_i)P(U_j\mid U_i)+ P(U_j)P(U_i\mid U_j)=\)</span></p>
+<p><span class="math inline">\(\displaystyle =\frac{1}{N}\frac{1}{N-1}+\frac{1}{N}\frac{1}{N-1}=\frac{2}{N(N-1)}\)</span></p>
+<p><span class="math inline">\(P(U_i\text{ sea seleccionada de una muestra de tamaño n})=\frac{n}{N}\)</span></p>
+<p><span class="math inline">\(P(U_i \wedge U_j \text{ sean seleccionadas de una muestra de tamaño n})=P(U_j)P(U_i\mid U_j)=\frac{n}{N}\frac{n-1}{N-1}\)</span></p>
+<p><span class="math inline">\(P(\text{ Seleccionar n elementos de la población N})=\frac{1}{\binom{N}{n}}\)</span></p>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 33%" />
+<col style="width: 19%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estimadores de</th>
+<th>Des Raj</th>
+<th>Leslie Kish</th>
+<th>Sharon Lohr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Media</td>
+<td><span class="math inline">\(\displaystyle{\hat{\overline{Y}}=\overline{y}=\frac{1}{n}S_{i=1}^{n}y_i}\)</span></td>
+<td><span class="math inline">\(\displaystyle{\overline{y}_0=\frac{1}{n}\sum_{j=1}^{n}y_j}\)</span></td>
+<td><span class="math inline">\(\displaystyle{\hat{\overline{Y}}=\overline{y}=\frac{1}{n}S_{i=1}^{n}y_i}\)</span></td>
+</tr>
+<tr class="even">
+<td>Varianza del estimador de la Media</td>
+<td><p><span class="math inline">\(\displaystyle{\hat{V}(\overline{y})=(1-f)\frac{s^2}{n}}\)</span></p>
+<p><span class="math inline">\(s^{2}=\frac{S_{j=1}^{n}(y_j-\overline{y})^2}{n-1}\)</span></p>
+<p><span class="math inline">\(f=\frac{n}{N}\)</span></p></td>
+<td><p><span class="math inline">\(\displaystyle{var(\overline{y}_0)=(1-f)\frac{s^2}{n}}\)</span></p>
+<p><span class="math inline">\(s^2=\frac{\sum_{j=1}^{n}(y_j-\overline{y})^2}{n-1}\)</span></p></td>
+<td><p><span class="math inline">\(\displaystyle{\hat{V}(\overline{y})=(1-f)\frac{s^2}{n}}\)</span></p>
+<p><span class="math inline">\(s^{2}=\frac{1}{n-1}\sum_{j=1}^{n}(y_j-\overline{y})^2\)</span></p></td>
+</tr>
+<tr class="odd">
+<td>Error Estándar del estimador de la media</td>
+<td><span class="math inline">\(s_{\overline{y}}=\sqrt{\hat{V}(\overline{y})}\)</span></td>
+<td><span class="math inline">\(s(\overline{y})=\sqrt{var(\overline{y}_0)}\)</span></td>
+<td><span class="math inline">\(se(\overline{y})=\sqrt{\hat{V}(\overline{y})}\)</span></td>
+</tr>
+<tr class="even">
+<td>Error Relativo o Coeficiente de Variación del estimador de la media</td>
+<td><span class="math inline">\(\hat{CV}(\overline{y})=\frac{\sqrt{\hat{V}(\overline{y})}}{\overline{y}}\)</span></td>
+<td><span class="math inline">\(cv(\overline{y})=\frac{s(\overline{y})}{\overline{y}}\)</span></td>
+<td><span class="math inline">\(\hat{CV}(\overline{y})=\frac{se(\overline{y})}{\overline{y}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td><span class="math inline">\(\hat{Y}=N\overline{y}\)</span></td>
+<td><span class="math inline">\(\hat{Y}=N\overline{y}\)</span></td>
+<td><span class="math inline">\(\hat{t}=N\overline{y}\)</span></td>
+</tr>
+<tr class="even">
+<td>Varianza del estimador del Total</td>
+<td><span class="math inline">\(\displaystyle{\hat{V}(\hat{Y})=N^2(1-f)\frac{s^2}{n}}\)</span></td>
+<td><span class="math inline">\(\displaystyle{\hat{V}(\hat{Y})=N^2(1-f)\frac{s^2}{n}}\)</span></td>
+<td><span class="math inline">\(\displaystyle{\hat{V}(\hat{t})=N^2(1-f)\frac{s^2}{n}}\)</span></td>
+</tr>
+<tr class="odd">
+<td>Proporción <span class="math inline">\(Y_i=1,0\)</span></td>
+<td><span class="math inline">\(\hat{p}=\overline{y}\)</span></td>
+<td><span class="math inline">\(\hat{p}=\overline{y}\)</span></td>
+<td><span class="math inline">\(\hat{p}=\overline{y}\)</span></td>
+</tr>
+<tr class="even">
+<td>Varianza del estimador de la Proporción</td>
+<td><span class="math inline">\(\displaystyle{\hat{V}(\hat{p})=(1-f)\frac{\hat{p}(1-\hat{p})}{n-1}}\)</span> <span class="math inline">\(=(1-f)\frac{\hat{p}\hat{q}}{n-1}\)</span></td>
+<td><span class="math inline">\(\approx\)</span></td>
+<td><span class="math inline">\(\approx\)</span></td>
+</tr>
+</tbody>
+</table>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
