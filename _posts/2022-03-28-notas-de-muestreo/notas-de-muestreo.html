@@ -1586,19 +1586,23 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td>Por el Teorema de la Probabilidad Total:</td>
 </tr>
 <tr class="even">
-<td>Sean los sucesos <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición del espacio muestral <span class="math inline">\(\Omega\)</span>, y sea <span class="math inline">\(B\)</span> un suceso cualquiera, se cumple que la probabilidad del suceso <span class="math inline">\(B\)</span> puede expresase en función de los sucesos <span class="math inline">\(A_i\)</span> de la sgte manera: <span class="math display">\[P(B)=P(B \mid A_1)\cdot P(A_1) + P(B \mid A_2)\cdot P(A_2) + \cdots +P(B \mid A_n)\cdot P(A_n)\]</span></td>
+<td>Sean los sucesos <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> una partición del espacio muestral <span class="math inline">\(\Omega\)</span>, y sea <span class="math inline">\(B\)</span> un suceso cualquiera, se cumple que la probabilidad del suceso <span class="math inline">\(B\)</span> puede expresase en función de los sucesos <span class="math inline">\(A_i\)</span> de la sgte manera: <span class="math inline">\(P(B)=P(B \mid A_1)\cdot P(A_1) + P(B \mid A_2)\cdot P(A_2) + \cdots +P(B \mid A_n)\cdot P(A_n)\)</span></td>
 </tr>
 </tbody>
 </table>
 <p><span class="math inline">\(P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\)</span></p>
 <p><span class="math inline">\(=P(U_1\cap U_j\cup U_2\cap U_j \cup \ldots \cup U_N\cap U_j)\)</span></p>
-<p><span class="math inline">\(=P(U_1\cap U_j)+ P(U_2\cap U_j)+ \ldots + P(U_N\cap U_j)\)</span> <span class="math inline">\(=P( U_j)P(U_1 \mid U_j)+ P( U_j)P(U_2 \mid U_j)+ \ldots + P( U_j)P(U_N \mid U_j)\)</span></p>
+<p><span class="math inline">\(=P(U_1\cap U_j)+ P(U_2\cap U_j)+ \ldots + P(U_N\cap U_j)\)</span></p>
+<p><span class="math inline">\(=P( U_j)P(U_1 \mid U_j)+ P( U_j)P(U_2 \mid U_j)+ \ldots + P( U_j)P(U_N \mid U_j)\)</span></p>
 <p>donde <span class="math inline">\(\ldots \rightarrow P( U_j)P(U_j \mid U_j)\rightarrow P(U_j \mid U_j)=0\)</span></p>
-<p><span class="math inline">\(\displaystyle =\frac{1}{N}\frac{1}{N-1}+\ldots+\frac{1}{N}\frac{1}{N-1},\quad N-1 \quad veces\)</span> <span class="math inline">\(\displaystyle =\sum_{i=1}^NP(U_j)P(U_i\mid U_j)\)</span> <span class="math inline">\(\displaystyle =\sum_{i=1}^N\frac{1}{N}\frac{1}{N-1}=(N-1)\frac{1}{N}\frac{1}{N-1}=\frac{1}{N}\)</span> Por lo tanto: <span class="math inline">\(\displaystyle P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\frac{1}{N}\)</span></p>
-<p><span class="math inline">\(\displaystyle P(\text{Seleccionar }U_i\text{ en el }3^{er}\text{ sorteo})=\frac{1}{N}\)</span></p>
-<p><span class="math inline">\(\displaystyle P(\text{Selección S produsca la }U_i \mid\text{ Una selección previa ha producido la } U_j, i\neq j)= \frac{1}{N-1}\)</span></p>
-<p><span class="math inline">\(\displaystyle P(\text{Selección R y S seleccione }U_i \text{ y } U_j) = P(U_i)P(U_j\mid U_i)+ P(U_j)P(U_i\mid U_j)=\)</span></p>
-<p><span class="math inline">\(\displaystyle =\frac{1}{N}\frac{1}{N-1}+\frac{1}{N}\frac{1}{N-1}=\frac{2}{N(N-1)}\)</span></p>
+<p><span class="math inline">\(=\frac{1}{N}\frac{1}{N-1}+\ldots+\frac{1}{N}\frac{1}{N-1},\quad N-1 \quad veces\)</span></p>
+<p><span class="math inline">\(=\sum_{i=1}^NP(U_j)P(U_i\mid U_j)\)</span></p>
+<p><span class="math inline">\(=\sum_{i=1}^N\frac{1}{N}\frac{1}{N-1}=(N-1)\frac{1}{N}\frac{1}{N-1}=\frac{1}{N}\)</span></p>
+<p>Por lo tanto: <span class="math inline">\(P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\frac{1}{N}\)</span></p>
+<p><span class="math inline">\(P(\text{Seleccionar }U_i\text{ en el }3^{er}\text{ sorteo})=\frac{1}{N}\)</span></p>
+<p><span class="math inline">\(P(\text{Selección S produsca la }U_i \mid\text{ Una selección previa ha producido la } U_j, i\neq j)= \frac{1}{N-1}\)</span></p>
+<p><span class="math inline">\(P(\text{Selección R y S seleccione }U_i \text{ y } U_j) = P(U_i)P(U_j\mid U_i)+ P(U_j)P(U_i\mid U_j)=\)</span></p>
+<p><span class="math inline">\(=\frac{1}{N}\frac{1}{N-1}+\frac{1}{N}\frac{1}{N-1}=\frac{2}{N(N-1)}\)</span></p>
 <p><span class="math inline">\(P(U_i\text{ sea seleccionada de una muestra de tamaño n})=\frac{n}{N}\)</span></p>
 <p><span class="math inline">\(P(U_i \wedge U_j \text{ sean seleccionadas de una muestra de tamaño n})=P(U_j)P(U_i\mid U_j)=\frac{n}{N}\frac{n-1}{N-1}\)</span></p>
 <p><span class="math inline">\(P(\text{ Seleccionar n elementos de la población N})=\frac{1}{\binom{N}{n}}\)</span></p>
@@ -1670,8 +1674,37 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <td><span class="math inline">\(\approx\)</span></td>
 <td><span class="math inline">\(\approx\)</span></td>
 </tr>
+<tr class="odd">
+<td>Tamaño de Muestra tomando en cuenta el estimador de la media</td>
+<td><p><span class="math inline">\(\displaystyle n&gt;\frac{S_y^2}{(\overline{Y}a_0)^2+\frac{S_y^2}{N}}\)</span></p>
+<p><span class="math inline">\(a_0=CV_{fijado}\)</span></p>
+<p>Y los otros valores poblacionales se toman de investigaciones pasadas</p></td>
+<td><span class="math inline">\(\approx\)</span></td>
+<td><span class="math inline">\(\approx\)</span></td>
+</tr>
 </tbody>
 </table>
+<h3 id="tamaño-de-muestra-basados-en-la-normalidad-asintótica">Tamaño de muestra, basados en la Normalidad Asintótica</h3>
+<p>Si <span class="math inline">\(n\)</span> aumenta(es grande) se cumple lo sgte:</p>
+<p><span class="math display">\[
+\overline{y} \sim N(\overline{Y},\frac{\sigma^2}{n})
+\]</span></p>
+<p><span class="math display">\[
+\rightarrow \overline{y} \sim N(\overline{Y},V(\overline{y})),V(\overline{y})=(1-f)\frac{S_y^2}{n}
+\]</span></p>
+<p><span class="math display">\[
+P(-z_{\alpha/2}&lt;\frac{\overline{y}-\overline{Y}}{\sqrt{V(\overline{y})}}&lt;z_{\alpha/2})=1-\alpha
+\]</span> <span class="math display">\[P(\overline{y}-z_{\alpha/2}\sqrt{V(\overline{y})} &lt;\overline{Y}&lt;\overline{y}+z_{\alpha/2}\sqrt{V(\overline{y})})=1-\alpha\]</span> Definimos el margen de error como: <span class="math display">\[e=z_{\alpha/2}\sqrt{V(\overline{y})}= \sqrt{(1-\frac{n}{N})}\frac{S_y}{\sqrt{n}}\]</span> Del cual resolveremos la ecuación en función de <span class="math inline">\(n\)</span>, definimos a <span class="math inline">\(n_0\)</span> como:</p>
+<p><span class="math display">\[n_0=(\frac{z_{\alpha/2}S_y}{e})^2\]</span> Para luego definir nuestro tamaño de muestra <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[n=\frac{n_0}{1+\frac{n_0}{N}}\]</span></p>
+<h3 id="tamaño-de-muestra-tomando-en-consideración-un-nivel-deseado-de-variación">Tamaño de Muestra Tomando en consideración un nivel deseado de variación</h3>
+<p><span class="math display">\[\displaystyle n&gt;\frac{S_y^2}{V_0+\frac{S_y^2}{N}} \rightarrow \frac{P(1-P)}{V_0 +\frac{P(1-P)}{N}}\]</span> Donde <span class="math inline">\(V_0\)</span> puede ser cualquier nivel deseado de precisión como:</p>
+<ul>
+<li>Varianza Muestral(<span class="math inline">\(V(\overline{y})\)</span>): <span class="math inline">\(V_0=V(\overline{y})\)</span></li>
+<li>Error Estandar(<span class="math inline">\(SE(\overline{y})\)</span>): <span class="math inline">\(V_0=SE(\overline{y})^2\)</span></li>
+<li>Coeficiente de Variación(<span class="math inline">\(CV(\overline{y})\)</span>): <span class="math inline">\(V_0=(CV(\overline{y})*\overline{y})^2\)</span></li>
+<li>Margen de error(<span class="math inline">\(e\)</span>): <span class="math inline">\(V_0=(\frac{e}{z_{1-\alpha/2}})^2\)</span></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

@@ -127,26 +127,34 @@ $P(\text{Seleccionar }U_i \wedge U_j \text{ sean seleccionados})=\frac{1}{N}\fra
 Por el Teorema de la Probabilidad Total:
 
 Sean los sucesos $A_1,A_2,\ldots,A_n$ una partición del espacio muestral $\Omega$, y sea $B$ un suceso cualquiera, se cumple que la probabilidad del suceso $B$ puede expresase en función de los sucesos $A_i$ de la sgte manera:
-$$P(B)=P(B \mid A_1)\cdot P(A_1) + P(B \mid A_2)\cdot P(A_2) + \cdots +P(B \mid A_n)\cdot P(A_n)$$
+$P(B)=P(B \mid A_1)\cdot P(A_1) + P(B \mid A_2)\cdot P(A_2) + \cdots +P(B \mid A_n)\cdot P(A_n)$
 ---
 
 $P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=$
 
 $=P(U_1\cap U_j\cup U_2\cap U_j \cup \ldots \cup U_N\cap U_j)$
 
-$=P(U_1\cap U_j)+ P(U_2\cap U_j)+ \ldots + P(U_N\cap U_j)$ $=P( U_j)P(U_1 \mid U_j)+ P( U_j)P(U_2 \mid U_j)+ \ldots + P( U_j)P(U_N \mid U_j)$
+$=P(U_1\cap U_j)+ P(U_2\cap U_j)+ \ldots + P(U_N\cap U_j)$ 
+
+$=P( U_j)P(U_1 \mid U_j)+ P( U_j)P(U_2 \mid U_j)+ \ldots + P( U_j)P(U_N \mid U_j)$
 
 donde $\ldots \rightarrow P( U_j)P(U_j \mid U_j)\rightarrow P(U_j \mid U_j)=0$
 
-$\displaystyle =\frac{1}{N}\frac{1}{N-1}+\ldots+\frac{1}{N}\frac{1}{N-1},\quad N-1 \quad veces$ $\displaystyle =\sum_{i=1}^NP(U_j)P(U_i\mid U_j)$ $\displaystyle =\sum_{i=1}^N\frac{1}{N}\frac{1}{N-1}=(N-1)\frac{1}{N}\frac{1}{N-1}=\frac{1}{N}$ Por lo tanto: $\displaystyle P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\frac{1}{N}$
+$=\frac{1}{N}\frac{1}{N-1}+\ldots+\frac{1}{N}\frac{1}{N-1},\quad N-1 \quad veces$ 
 
-$\displaystyle P(\text{Seleccionar }U_i\text{ en el }3^{er}\text{ sorteo})=\frac{1}{N}$
+$=\sum_{i=1}^NP(U_j)P(U_i\mid U_j)$ 
 
-$\displaystyle P(\text{Selección S produsca la }U_i \mid\text{ Una selección previa ha producido la } U_j, i\neq j)= \frac{1}{N-1}$
+$=\sum_{i=1}^N\frac{1}{N}\frac{1}{N-1}=(N-1)\frac{1}{N}\frac{1}{N-1}=\frac{1}{N}$ 
 
-$\displaystyle P(\text{Selección R y S seleccione }U_i \text{ y } U_j) = P(U_i)P(U_j\mid U_i)+ P(U_j)P(U_i\mid U_j)=$
+Por lo tanto: $P(\text{Seleccionar }U_i\text{ en el }2^{do}\text{ sorteo})=\frac{1}{N}$
 
-$\displaystyle =\frac{1}{N}\frac{1}{N-1}+\frac{1}{N}\frac{1}{N-1}=\frac{2}{N(N-1)}$
+$P(\text{Seleccionar }U_i\text{ en el }3^{er}\text{ sorteo})=\frac{1}{N}$
+
+$P(\text{Selección S produsca la }U_i \mid\text{ Una selección previa ha producido la } U_j, i\neq j)= \frac{1}{N-1}$
+
+$P(\text{Selección R y S seleccione }U_i \text{ y } U_j) = P(U_i)P(U_j\mid U_i)+ P(U_j)P(U_i\mid U_j)=$
+
+$=\frac{1}{N}\frac{1}{N-1}+\frac{1}{N}\frac{1}{N-1}=\frac{2}{N(N-1)}$
 
 $P(U_i\text{ sea seleccionada de una muestra de tamaño n})=\frac{n}{N}$
 
@@ -177,3 +185,59 @@ $P(\text{ Seleccionar n elementos de la población N})=\frac{1}{\binom{N}{n}}$
 +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
 | Varianza del estimador de la Proporción                             | $\displaystyle{\hat{V}(\hat{p})=(1-f)\frac{\hat{p}(1-\hat{p})}{n-1}}$ $=(1-f)\frac{\hat{p}\hat{q}}{n-1}$ | $\approx$                                                    | $\approx$                                                                  |
 +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+| Tamaño de Muestra tomando en cuenta el estimador de la media        | $\displaystyle n>\frac{S_y^2}{(\overline{Y}a_0)^2+\frac{S_y^2}{N}}$                                      | $\approx$                                                    | $\approx$                                                                  |
+|                                                                     |                                                                                                          |                                                              |                                                                            |
+|                                                                     | $a_0=CV_{fijado}$                                                                                        |                                                              |                                                                            |
+|                                                                     |                                                                                                          |                                                              |                                                                            |
+|                                                                     | Y los otros valores poblacionales se toman de investigaciones pasadas                                    |                                                              |                                                                            |
++---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+
+###  Tamaño de muestra, basados en la Normalidad Asintótica
+
+Si $n$ aumenta(es grande) se cumple lo sgte:
+
+$$
+\overline{y} \sim N(\overline{Y},\frac{\sigma^2}{n})
+$$
+
+$$
+\rightarrow \overline{y} \sim N(\overline{Y},V(\overline{y})),V(\overline{y})=(1-f)\frac{S_y^2}{n}
+$$
+
+
+$$
+P(-z_{\alpha/2}<\frac{\overline{y}-\overline{Y}}{\sqrt{V(\overline{y})}}<z_{\alpha/2})=1-\alpha
+$$
+$$P(\overline{y}-z_{\alpha/2}\sqrt{V(\overline{y})} <\overline{Y}<\overline{y}+z_{\alpha/2}\sqrt{V(\overline{y})})=1-\alpha$$
+Definimos el margen de error como:
+$$e=z_{\alpha/2}\sqrt{V(\overline{y})}= \sqrt{(1-\frac{n}{N})}\frac{S_y}{\sqrt{n}}$$
+Del cual resolveremos la ecuación en función de $n$, definimos a $n_0$ como:
+
+$$n_0=(\frac{z_{\alpha/2}S_y}{e})^2$$
+Para luego definir nuestro tamaño de muestra $n$:
+
+$$n=\frac{n_0}{1+\frac{n_0}{N}}$$
+
+### Tamaño de Muestra Tomando en consideración un nivel deseado de variación
+
+
+$$\displaystyle n>\frac{S_y^2}{V_0+\frac{S_y^2}{N}} \rightarrow \frac{P(1-P)}{V_0 +\frac{P(1-P)}{N}}$$
+Donde $V_0$ puede ser cualquier nivel deseado de precisión como:
+
+- Varianza Muestral($V(\overline{y})$): $V_0=V(\overline{y})$
+- Error Estandar($SE(\overline{y})$): $V_0=SE(\overline{y})^2$
+- Coeficiente de Variación($CV(\overline{y})$): $V_0=(CV(\overline{y})*\overline{y})^2$
+- Margen de error($e$): $V_0=(\frac{e}{z_{1-\alpha/2}})^2$
+
+
+
+
+
+
+
+
+
+
+
+
+
